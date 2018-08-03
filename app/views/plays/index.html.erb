@@ -1,0 +1,12 @@
+<% @plays.each do |play|%>
+    <div class="">
+        <div class="col-sm-6 col-sm-offset-20">
+            <h2 class="header">
+                <%= link_to play.title, play_path(play) %>
+            </h2>
+            <p>
+                <%= link_to play.director, play_path(play)%>
+            </p>
+        </div>
+    </div>
+<% end%>
