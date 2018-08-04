@@ -1,27 +1,23 @@
-<div class="">
-    <%= link_to "Back", root_path, class:"btn btn-success" %>
-</div>
 
-<div class="col-lg-12">
-    <div class="caption">
+
+<div class="">
+    <div class="col-lg-8 col-sm-offset-2 well text-center">
         <h1><%= @play.title %></h1>
         <h6>By: <%= @play.director %></h3>
-        <p class="well"><%= @play.description %></p>
-    </div>
-    <span> posted by:
+        <div class=""><%= image_tag @play.play_img.url, class:"show-image"%></div>
+        <p class=""><%= @play.description %></p>
+            <span> posted by:
         <%= @play.user.email%>
-    </span> <br>
-<div class="links btn-group">
-    <% if user_signed_in? %>
-        <% if @play.user_id == current_user.id%>
-        <%= link_to "Edit", edit_play_path(@play), class:"btn btn-info" %>
-        <%= link_to "Delete", play_path(@play), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
-        <% end %>
-    <% end %>
-</div>
-
-
-
+            </span> <br>
+        <div class="links btn-group">
+            <% if user_signed_in? %>
+                <% if @play.user_id == current_user.id%>
+                <%= link_to "Edit", edit_play_path(@play), class:"btn btn-info" %>
+                <%= link_to "Delete", play_path(@play), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
 </div>
 
 
